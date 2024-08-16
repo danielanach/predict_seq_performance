@@ -137,7 +137,8 @@ def predict_coverage_one_sample(pcr_cycles, pcr_amount, kit, reads, param_dct):
     avg_cov = param_dct.get('total_reads', 0) * reads + \
               param_dct.get('pcr_cycles', 0) * pcr_cycles + \
               param_dct.get('post_pcr1_dna', 0) * np.log10(pcr_amount) + \
-              param_dct.get('pcr_cycles:post_pcr1_dna', 0) * pcr_cycles * np.log10(pcr_amount)
+              param_dct.get('pcr_cycles:post_pcr1_dna', 0) * pcr_cycles * np.log10(pcr_amount) + \
+              kit_coefficient + param_dct['Intercept']
 
     return avg_cov
 
