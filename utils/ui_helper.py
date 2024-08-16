@@ -187,8 +187,7 @@ def main_text_and_data_upload(state, APP_TITLE, PARAM_FILE):
     ### Predict exome-coverage of FFPE DNA libraries
     ''')
 
-    image = Image.open('coverage_example.png')
-    st.image(image)
+    st.image('coverage_example.png')
 
     st.markdown('''
     ### Motivation:
