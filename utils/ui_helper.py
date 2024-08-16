@@ -282,7 +282,7 @@ def main_text_and_data_upload(state, APP_TITLE, PARAM_FILE):
             st.markdown(linko, unsafe_allow_html=True)
 
     with st.expander("Calculate Results", expanded=True):
-        result = st.button("Predict mean exome coverage")
+       result = st.button("Predict mean exome coverage")
 
     #Calculation result
        if result == True:
