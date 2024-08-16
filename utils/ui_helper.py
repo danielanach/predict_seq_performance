@@ -243,7 +243,8 @@ def main_text_and_data_upload(state, APP_TITLE, PARAM_FILE):
     st.markdown('''
             Example file: [example_input.csv](https://github.com/danielanach/PROCEED/blob/main/example_input.csv)
         ''')
-    with st.beta_expander("Upload dataset (*Required)", expanded=True):
+    
+    with st.expander("Upload dataset (*Required)", expanded=True):
         st.info(""" Upload your excel / csv file here. Maximum size is 200 Mb. """)
         st.markdown("""**Note:** Please upload an Excel file or csv file""")
         file_buffer = st.file_uploader("Upload your dataset below", type=["csv", "xlsx"])
@@ -280,8 +281,8 @@ def main_text_and_data_upload(state, APP_TITLE, PARAM_FILE):
             linko= f'<a href="data:file/csv;base64,{b64}" download="SEQResults.csv">Download csv file</a>'
             st.markdown(linko, unsafe_allow_html=True)
 
-    with st.beta_expander("Calculate Results",expanded =True):
-       result = st.button("Predict mean exome coverage")
+    with st.expander("Calculate Results", expanded=True):
+        result = st.button("Predict mean exome coverage")
 
     #Calculation result
        if result == True:
