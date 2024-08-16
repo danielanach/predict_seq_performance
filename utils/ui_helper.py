@@ -167,8 +167,12 @@ def predict_coverage(df, PARAM_FILE, reads_mil, read_length, kit):
     for i in df.index:
         pcr_cycles = df.loc[i]['pcr_cycles']
         pcr_amount = df.loc[i]['pcr1_amount']
-        avg_cov = predict_coverage_one_sample(pcr_cycles, pcr_amount, kit,
-                                              total_reads, model_params)
+        
+        avg_cov = predict_coverage_one_sample(pcr_cycles = pcr_cycles, 
+                                              pcr_amount = pcr_amount, 
+                                              kit = kit,
+                                              reads = total_reads, 
+                                              param_dct = model_params)
         avg_cov_pred_lst.append(avg_cov)
 
     # In case the prediction is negative, place min at 0.
